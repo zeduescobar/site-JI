@@ -1,5 +1,6 @@
 // Cases page
 function CasesPage() {
+  const _CTAFinal = window.CTAFinal;
   return (
     <main data-screen-label="Cases">
       <div className="page-header">
@@ -21,7 +22,7 @@ function CasesPage() {
           </div>
         </div>
       </section>
-      <CTAFinal />
+      <_CTAFinal />
     </main>
   );
 }

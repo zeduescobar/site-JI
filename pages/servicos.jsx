@@ -7,12 +7,12 @@ const SERVICES = [
     name: "Criação de Sites",
     icon: "globe",
     h: "Sites profissionais que vendem — não só decoram.",
-    lead: "Site rápido, otimizado para Google e pronto em até 15 dias. A partir de R$ 2.500. Garantia de 30 dias ou 100% do dinheiro de volta.",
+    lead: "Site rápido, otimizado para Google e pronto em até 15 dias. A partir de R$ 1.200.",
     features: [
       { ic: "spark", h: "Design clean + conversão", p: "Layout que não confunde o cliente. Cada seção pensada para levar à ação." },
-      { ic: "trend", h: "PageSpeed 90+", p: "Site rápido em mobile e desktop. Google ama, cliente também." },
+      { ic: "trend", h: "Melhor desempenho", p: "Site rápido em mobile e desktop. Google ama, cliente também." },
       { ic: "shield", h: "SSL, LGPD e sitemap", p: "Tudo configurado: certificado, política de privacidade e Search Console." },
-      { ic: "code", h: "Código limpo e seu", p: "Tecnologia moderna (Next.js + Tailwind). O código fica no seu nome." },
+      { ic: "code", h: "Código limpo e seu", p: "O código fica no seu nome. Você nunca fica refém da gente." },
     ],
   },
   {
@@ -23,7 +23,6 @@ const SERVICES = [
     lead: "Gestão profissional de Google Ads, com relatório mensal e foco obsessivo em ROAS — não em likes.",
     features: [
       { ic: "search", h: "Google Ads de alta intenção", p: "Mira nas palavras de quem está pronto para fechar — não só pesquisando." },
-      { ic: "chart", h: "Campanhas com criativo testado", p: "Variações testadas semanalmente. O que não converte, sai do ar." },
       { ic: "chart", h: "Relatório mensal sem enrolação", p: "Quanto investiu, quanto retornou, o que vamos ajustar. Em uma página." },
       { ic: "target", h: "Geo-segmentação por bairro", p: "Anúncio só para quem está na sua área de atendimento. Verba não vaza." },
     ],
@@ -39,19 +38,6 @@ const SERVICES = [
       { ic: "calendar", h: "Agenda automática", p: "Marca horários direto na sua agenda Google Calendar / sistema próprio." },
       { ic: "spark", h: "Treinada com seu negócio", p: "Aprende seus serviços, preços e tom de voz. Não soa robô genérico." },
       { ic: "users", h: "Hand-off para humano", p: "Detecta caso complexo e passa para você com o resumo da conversa." },
-    ],
-  },
-  {
-    id: "apps",
-    name: "Aplicativos",
-    icon: "phone",
-    h: "App próprio para clientes recorrentes — Android e iOS.",
-    lead: "Para clínicas, escritórios e lojas com base de clientes que merece app próprio. Lançamento nas duas lojas em 30-45 dias.",
-    features: [
-      { ic: "phone", h: "Android + iOS nativo", p: "Publicado em Google Play e App Store no seu nome de empresa." },
-      { ic: "calendar", h: "Agendamento e fidelidade", p: "Cliente agenda direto no app. Pontos, cashback e recorrência inclusos." },
-      { ic: "wifi", h: "Notificações push", p: "Comunicação direta — sem depender de algoritmo de rede social." },
-      { ic: "chart", h: "Painel de métricas", p: "Você vê o que cada cliente faz, quando volta e qual canal trouxe ele." },
     ],
   },
 ];
@@ -152,39 +138,12 @@ function SvcMockIA() {
   );
 }
 
-function SvcMockApps() {
-  return (
-    <div className="svc-mock" style={{ display: "flex", justifyContent: "center", alignItems: "center", background: "var(--bg-soft)" }}>
-      <div style={{ width: 220, background: "var(--ink)", borderRadius: 32, padding: 8, boxShadow: "var(--shadow-lg)" }}>
-        <div style={{ background: "var(--bg)", borderRadius: 26, height: 420, padding: 18, display: "flex", flexDirection: "column", gap: 14 }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <div>
-              <div style={{ fontSize: 11, color: "var(--ink-3)" }}>Olá, Maria 👋</div>
-              <div style={{ fontSize: 16, fontWeight: 700 }}>Próxima sessão</div>
-            </div>
-            <div style={{ width: 32, height: 32, borderRadius: "50%", background: "var(--grad)" }}></div>
-          </div>
-          <div style={{ background: "var(--grad)", borderRadius: 14, padding: 14, color: "white" }}>
-            <div style={{ fontSize: 11, opacity: 0.85 }}>Quinta-feira · 16h00</div>
-            <div style={{ fontSize: 14, fontWeight: 700, marginTop: 4 }}>Limpeza de pele profunda</div>
-            <div style={{ fontSize: 11, marginTop: 8, opacity: 0.85 }}>com Dra. Ana · 1h30</div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
-            {["Agendar", "Histórico", "Pontos", "Indique"].map(t => (
-              <div key={t} style={{ background: "var(--bg-soft)", borderRadius: 10, padding: "12px 10px", fontSize: 11, fontWeight: 600 }}>{t}</div>
-            ))}
-          </div>
-          <div style={{ marginTop: "auto", textAlign: "center", fontSize: 10, color: "var(--ink-3)" }}>seu app · sua marca</div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 function ServicosPage() {
+  const _CTAFinal = window.CTAFinal;
   const [active, setActive] = useStateSvc("sites");
   const svc = SERVICES.find(s => s.id === active);
-  const Mock = { sites: SvcMockSites, trafego: SvcMockTrafego, ia: SvcMockIA, apps: SvcMockApps }[active];
+  const Mock = { sites: SvcMockSites, trafego: SvcMockTrafego, ia: SvcMockIA }[active];
   return (
     <main data-screen-label="Servicos">
       <div className="page-header">
@@ -234,7 +193,7 @@ function ServicosPage() {
         </div>
       </section>
 
-      <CTAFinal />
+      <_CTAFinal />
     </main>
   );
 }

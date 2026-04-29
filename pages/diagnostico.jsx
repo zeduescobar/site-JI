@@ -30,7 +30,26 @@ function DiagnosticoPage() {
     return `(${d.slice(0,2)}) ${d.slice(2,7)}-${d.slice(7)}`;
   };
 
-  const next = () => { if (step < TOTAL) setStep(step + 1); else setDone(true); };
+  const sendToWhatsApp = () => {
+    const msg = [
+      `Olá! Vim pelo site da JI Tecnologia e quero solicitar meu diagnóstico gratuito. 😊`,
+      ``,
+      `*Nome:* ${data.nome}`,
+      `*WhatsApp:* ${data.whats}`,
+      data.email ? `*E-mail:* ${data.email}` : null,
+      data.cidade ? `*Cidade:* ${data.cidade}` : null,
+      ``,
+      `*Segmento:* ${data.segmento}`,
+      `*Situação atual:* ${data.site}`,
+      `*Objetivo (90 dias):* ${data.goal}`,
+      `*Investimento mensal:* ${data.verba}`,
+    ].filter(l => l !== null).join("\n");
+    const url = `https://wa.me/5511942805862?text=${encodeURIComponent(msg)}`;
+    window.open(url, "_blank");
+    setDone(true);
+  };
+
+  const next = () => { if (step < TOTAL) setStep(step + 1); else sendToWhatsApp(); };
   const prev = () => { if (step > 1) setStep(step - 1); };
 
   if (done) {
@@ -149,16 +168,13 @@ function DiagnosticoPage() {
 
             {step === 3 && (
               <>
-                <h2>Qual a faixa de investimento mensal?</h2>
-                <p className="lead">Vamos sugerir o pacote certo. Se ainda não sabe, escolha "ainda definindo" — sem stress.</p>
+                <h2>Qual plano faz mais sentido pra você?</h2>
+                <p className="lead">Condição de lançamento — 3 vagas. Se ainda não sabe, escolha "ainda definindo" — sem stress.</p>
                 <div className="choices">
                   {[
-                    { k: "Até R$ 500/mês", s: "Começando — Presença Local básico." },
-                    { k: "R$ 500 a R$ 1.500/mês", s: "Operação enxuta — Presença + tráfego inicial." },
-                    { k: "R$ 1.500 a R$ 3.000/mês", s: "Crescer agora — pacote Acelerador." },
-                    { k: "R$ 3.000 a R$ 6.000/mês", s: "Escalar com previsibilidade — Acelerador + extra." },
-                    { k: "Acima de R$ 6.000/mês", s: "Dominar a região — Domínio Total." },
-                    { k: "Ainda definindo", s: "Sem problema, vamos te ajudar a estimar." },
+                    { k: "Presença Local — R$ 960 + R$ 238/mês", s: "Landing page, domínio, hospedagem e SEO básico." },
+                    { k: "Acelerador — R$ 2.800 + R$ 720/mês", s: "Site completo, Google Analytics e estrutura de tráfego pago." },
+                    { k: "Ainda definindo", s: "Sem problema, vamos te ajudar a escolher." },
                   ].map(opt => (
                     <button key={opt.k} className={`choice ${data.verba === opt.k ? "on" : ""}`} onClick={() => set("verba", opt.k)}>
                       <span className="rad"></span>
