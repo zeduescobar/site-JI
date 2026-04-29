@@ -13,7 +13,7 @@ const PLANS = [
     cta: "Quero esse plano",
     features: [
       { t: "Landing page focada em conversão", on: true },
-      { t: "SEO básico", on: true },
+      { t: "SEO otimizado para Google", on: true },
       { t: "Botão de WhatsApp integrado", on: true },
       { t: "Suporte mensal", on: true },
     ],

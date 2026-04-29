@@ -172,7 +172,7 @@ function DiagnosticoPage() {
                 <p className="lead">Condição de lançamento — 3 vagas. Se ainda não sabe, escolha "ainda definindo" — sem stress.</p>
                 <div className="choices">
                   {[
-                    { k: "Presença Local — R$ 960 + R$ 238/mês", s: "Landing page, domínio, hospedagem e SEO básico." },
+                    { k: "Presença Local — R$ 960 + R$ 238/mês", s: "Landing page, domínio, hospedagem e SEO otimizado." },
                     { k: "Acelerador — R$ 2.800 + R$ 720/mês", s: "Site completo, Google Analytics e estrutura de tráfego pago." },
                     { k: "Ainda definindo", s: "Sem problema, vamos te ajudar a escolher." },
                   ].map(opt => (
