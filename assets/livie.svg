@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 110" fill="none">
+  <!-- Cruz Livie: duas peças L arredondadas -->
+  <!-- Peça superior-esquerda (marrom escuro) -->
+  <path d="M72 10 Q72 10 72 10 L72 10 C72 10 72 10 72 10
+    M52 14 C52 14 52 14 52 14" fill="none"/>
+
+  <!-- Ícone "+" com cantos arredondados, split em 2 peças -->
+  <!-- Peça dark: parte superior + direita -->
+  <rect x="60" y="8"  width="22" height="50" rx="11" fill="#4B3230"/>
+  <rect x="60" y="8"  width="50" height="22" rx="11" fill="#4B3230"/>
+  <!-- Peça tan: parte inferior + esquerda -->
+  <rect x="38" y="38" width="22" height="50" rx="11" fill="#C4A882"/>
+  <rect x="38" y="38" width="50" height="22" rx="11" fill="#C4A882"/>
+
+  <!-- Texto "livie" -->
+  <text x="130" y="60" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" letter-spacing="-1" fill="#4B3230">livie</text>
+  <!-- Subtítulo -->
+  <text x="132" y="80" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="400" letter-spacing="3.5" fill="#7A6360">Clínica Integrada</text>
+</svg>

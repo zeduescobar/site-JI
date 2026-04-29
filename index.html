@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>JI Tecnologia | Sites, IA e Tráfego para Pequenos Negócios Locais</title>
+<meta name="description" content="Transformamos pequenos negócios em máquinas de captação. Sites profissionais, tráfego pago e atendimento com IA. Diagnóstico gratuito em 48h." />
+<meta name="theme-color" content="#7C3AED" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0B1020" media="(prefers-color-scheme: dark)" />
+<meta name="color-scheme" content="light dark" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="JI Tecnologia | Sites, IA e Tráfego para Pequenos Negócios Locais" />
+<meta property="og:description" content="Sites profissionais, tráfego pago e atendimento com IA. Diagnóstico gratuito em 48h." />
+<meta property="og:locale" content="pt_BR" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Favicon SVG (logo JI em gradiente) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231E40AF'/%3E%3Cstop offset='1' stop-color='%237C3AED'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='44' font-family='Segoe UI, Arial, sans-serif' font-size='32' font-weight='800' fill='%23fff' text-anchor='middle'%3EJI%3C/text%3E%3C/svg%3E" />
+
+<!-- Anti-FOUC: aplica tema antes do React montar (sistema ou salvo) -->
+<script>
+  (function () {
+    try {
+      var saved = localStorage.getItem('ji-theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var theme = saved || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css?v=9" />
+
+<!-- React PRODUÇÃO + Babel: bem mais leve e rápido que builds de dev -->
+<script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href="#main" class="skip-link">Pular para o conteúdo</a>
+<div id="root"></div>
+
+<script type="text/babel" src="tweaks-panel.jsx?v=9"></script>
+<script type="text/babel" src="components/primitives.jsx?v=9"></script>
+<script type="text/babel" src="components/chrome.jsx?v=9"></script>
+<script type="text/babel" src="components/hero.jsx?v=9"></script>
+<script type="text/babel" src="components/sections.jsx?v=9"></script>
+<script type="text/babel" src="components/pricing.jsx?v=9"></script>
+<script type="text/babel" src="components/cases.jsx?v=9"></script>
+<script type="text/babel" src="components/faq.jsx?v=9"></script>
+<script type="text/babel" src="pages/home.jsx?v=9"></script>
+<script type="text/babel" src="pages/servicos.jsx?v=9"></script>
+<script type="text/babel" src="pages/cases.jsx?v=9"></script>
+<script type="text/babel" src="pages/diagnostico.jsx?v=9"></script>
+<script type="text/babel" src="app.jsx?v=9"></script>
+</body>
+</html>

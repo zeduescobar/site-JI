@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 110" fill="none">
+  <!-- Ícone quadrado azul arredondado -->
+  <rect x="0" y="10" width="88" height="88" rx="18" fill="#2978C4"/>
+  <!-- Letterform "vo" em branco — v + o conectados -->
+  <path d="M18 32 L34 68 L44 44 Q50 28 56 44 L62 68 L78 32"
+        stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- "VaiCom" -->
+  <text x="104" y="62" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="800" letter-spacing="-1" fill="#2D2D2D">VaiCom</text>
+  <!-- "SAÚDE" -->
+  <text x="106" y="83" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="5" fill="#5A5A5A">SAÚDE</text>
+</svg>
